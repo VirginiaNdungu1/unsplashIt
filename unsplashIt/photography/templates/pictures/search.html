@@ -1,0 +1,54 @@
+{% extends 'photography_base/base.html' %}
+{% load static %}
+
+{% block scripts %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block body %}
+  {{block.super}}
+  <header class="photo_page text-center text-white d-flex">
+    <!-- {{genre.id}} -->
+    <div class="container">
+      <div class="center search_bar">
+        <h2>
+          <strong>{{message}}</strong>
+        </h2>
+        <small>{{photos.count}}
+          Photos</small>
+      </div>
+      <div class="tags_bar"></div>
+    </div>
+
+    <!-- <div class="center genre_title">
+      <h1 class="text-center">{{photo.genre.name}}</h1>
+      <hr>
+    </div> -->
+    <!--  -->
+    <div class="search_photo_genre">
+      {% if photos %}
+        {% for photo in photos %}
+          <div class="search_genre_photo">
+            {{photo.tags.all.count}}
+            Collections
+            <a href="{% url 'photo' photo.id %}">
+              <img src="{{photo.photo_image.url}}" class="img-responsive" alt="{{photo.title}}"></a>
+            <div class="centered">
+              {{photo.title}}
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <!-- <div class="container">
+
+      <img src="{{photo.photo_image.url}}" class="img-responsive" alt="">
+    </div>
+    <div class="photo_title">
+      <h2 class="text-center">{{photo.title}}</h2>
+    </div>
+    <div class="photo_story">
+      <p>{{photo.story}}</p>
+    </div> -->
+  </header>
+{% endblock %}
