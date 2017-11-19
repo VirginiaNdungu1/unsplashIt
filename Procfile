@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath unsplashIt wsgi
+  web: gunicorn unsplashIt.wsgi
