@@ -1,0 +1,61 @@
+{% load bootstrap3 %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock %}
+{% block styles%}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+{% endblock %}
+{% block body %}
+  <!-- Navigation -->
+  <header class="site-header navbar-transparent">
+    <nav class="navbar navbar-default">
+      <div class="container">
+
+        <!-- Toggle buttons and brand -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+            <span class="glyphicon glyphicon-option-vertical"></span>
+          </button>
+
+          <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href="/">splashIt</a>
+        </div>
+        <!-- END Toggle buttons and brand -->
+
+        <!-- Top navbar -->
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/">collections</a>
+            </li>
+            <li>
+              <a href="/">about</a>
+            </li>
+            <!-- action="/" -->
+            <li>
+              <form class="navbar-form" action="{% url 'search_photo' %}" role="search">
+                <div class="input-group has-feedback">
+                  <input type="text" class="form-control" name="photo" placeholder="Search..">
+                  <i class="form-control-feedback glyphicon glyphicon-search"></i>
+                </div>
+              </form>
+            </li>
+          </ul>
+        </div>
+        <!-- END Top navbar -->
+
+      </div>
+    </nav>
+    <!-- END Top navbar & branding -->
+
+  </header>
+{% endblock %}
