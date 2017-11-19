@@ -1,0 +1,54 @@
+{% extends 'photography_base/base.html' %}
+{% load static %}
+{% get_static_prefix %}
+{% block scripts %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block body %}
+  {{block.super}}
+  <header class="photo_page text-center text-white d-flex">
+    <!-- {{genre.id}} -->
+    <div class="container">
+      <div class="flex-container">
+        {% for tag in photo.tags.all %}
+          <div class="tag_section">
+            <img src="{{tag.tag_image.url}}" alt="">
+            <div class="centered">
+              <small>{{tag.name}}</small>
+            </div>
+          </div>
+          {% empty %}
+          No tags assigned to this news article...
+        {% endfor %}
+      </div>
+    </div>
+    <div class="center">
+      <h1 class="text-center">
+        <strong>{{photo.genre.name}}</strong>
+      </h1>
+      <hr>
+    </div>
+    <!-- <div class="center genre_title">
+      <h1 class="text-center">{{photo.genre.name}}</h1>
+      <hr>
+    </div> -->
+    <!--  -->
+    <div class="center">
+      <div class="container hover-zoom">
+        <img src="{{photo.photo_image.url}}" class="img-responsive">
+      </div>
+      <div class="photo_title">
+        <h2 class="text-center">{{photo.title}}</h2>
+      </div>
+      <div class="photo_story">
+        <p>{{photo.story}}</p>
+      </div>
+      <div class="center photo_link">
+        <input type="text" class="form-control" name="image_link" value="{{photo.photo_image.url}}">
+      </div>
+    </div>
+
+  </header>
+
+{% endblock %}
