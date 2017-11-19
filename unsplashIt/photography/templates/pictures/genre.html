@@ -1,0 +1,24 @@
+{% extends 'photography_base/base.html' %}
+{% load static %}
+
+{% block scripts %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block body %}
+  {{block.super}}
+  <header class="genre_page text-center text-white d-flex">
+    <!-- {{genre.id}} -->
+    <div class="photo_genre">
+      {% for photo in photos %}
+        <div class="genre_photo genre-zoom">
+          <a href="{% url 'photo' photo.id %}" data-toggle="modal" data-target="#myModal">
+            <img src="{{photo.photo_image.url}}" class="img-responsive" alt="{{photo.title}}"></a>
+          <div class="centered">
+            {{photo.title}}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </header>
+{% endblock %}
