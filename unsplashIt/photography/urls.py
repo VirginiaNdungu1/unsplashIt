@@ -12,6 +12,6 @@ urlpatterns = [
     url(r'^search/$', views.search_photo, name='search_photo')
 ]
 if settings.DEBUG:
-    urlpatterns += staticfiles_urlpatterns()
+    # urlpatterns += staticfiles_urlpatterns()
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
