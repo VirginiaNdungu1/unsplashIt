@@ -1,0 +1,48 @@
+{% extends 'photography_base/base.html' %}
+{% load static %}
+
+{% block scripts %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block body %}
+  {{block.super}}
+  <!-- background Image here -->
+  <div id="overlay">
+    <header class="landing_page text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <div class="center heading ">
+              <h2 class="text-uppercase">
+                <strong>See the world through the lens</strong>
+              </h2>
+              <hr>
+            </div>
+          </div>
+          <div class="col-lg-10 mx-auto">
+            <h4 class="text-center mb-5">
+              Gifted by the world’s most generous community of photographers</h4>
+            <button type="button" name="button">
+              <a class="btn btn-xl js-scroll-trigger" href="#about">Beautiful, free photos.</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- genres here -->
+    <!-- <div class="all_genres"> -->
+    <div class="flex-container">
+      {% for genre in genres%}
+        <div class="genre_section">
+          <img src="{{genre.genre_image.url}}" class="img-responsive" alt="Image">
+          <div class="centered">
+            <a href="{% url 'genre' genre.id %}">{{genre.name}}</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <!-- </div> -->
+
+  </div>
+{% endblock %}
