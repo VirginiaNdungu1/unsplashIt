@@ -75,5 +75,4 @@ Running on http://127.0.0.1:8000/
     Deployment:
        Heroku
 
-
-                 ## MIT (c) 2017 [Virginia Ndung'u]((https://github.com/VirginiaNdungu1/unsplashIt)
+                                          MIT License Copyright (c) 2017 Virginia Ndung'u
