@@ -51,18 +51,18 @@ Running on http://127.0.0.1:8000/
 
 ## Hosting / Production
 
-### requirements
-gunicorn==19.7.1
-python-decouple==3.1
-whitenoise==3.3.1
-dj-database-url==0.4.2
+      ### requirements
+            gunicorn==19.7.1
+            python-decouple==3.1
+            whitenoise==3.3.1
+            dj-database-url==0.4.2
 
 [splashIt](https://splashit.herokuapp.com/)
 
 
 ### Running Tests
 
-python3.6 manage.py test
+      python3.6 manage.py test
 
 ## Technologies Used
        Python3.6
