@@ -38,6 +38,7 @@
         View full size image on hover
         View image details
         Copy the image link of the image
+        search for an image
         
         
 ## Known Bugs
