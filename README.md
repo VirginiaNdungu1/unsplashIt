@@ -1,15 +1,15 @@
-# splashIt
+# [splashIt](https://github.com/VirginiaNdungu1/unsplashIt)
 
-[splashIt](https://github.com/VirginiaNdungu1/unsplashIt)
+
 ## Web Application that allows you to see the world through the lense
 
 ## Prerequisites
-psycopg2==2.7.3.2
-Django==1.11.7
-django-bootstrap3==9.1.0
-olefile==0.44
-Pillow==4.3.0
-pytz==2017.3
+      psycopg2==2.7.3.2
+      Django==1.11.7
+      django-bootstrap3==9.1.0
+      olefile==0.44
+      Pillow==4.3.0
+      pytz==2017.3
 
 ## Installation
 
